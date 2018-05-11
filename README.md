@@ -1,5 +1,8 @@
 # Creating a basic S2I builder image  
 Chinese version guide: http://dockone.io/article/2942
+Two things to be notice:
+1) need to install epel repo in order to install httpd
+2) need to pause in test/run script to avoid failure
 ## Getting started  
 
 ### Files and Directories  

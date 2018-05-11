@@ -82,6 +82,7 @@ cleanup() {
       docker stop $(cat $cid_file)
     fi
   fi
+  sleep 2
   if image_exists ${IMAGE_NAME}-testapp; then
     docker rmi ${IMAGE_NAME}-testapp
   fi
@@ -156,4 +157,3 @@ test_connection
 check_result $?
 
 cleanup
-
