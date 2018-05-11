@@ -13,8 +13,8 @@ LABEL io.k8s.description="Platform for static html files" \
       io.openshift.expose-services="8080:http" \
       io.openshift.tags="builder,html,lighttpd."
 
-# TODO: Install required packages here:
-RUN yum install -y lighttpd && yum clean all -y
+# TODO: Install required packages here, epel repo is required to install lighttpd
+RUN rpm -ivh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && yum install -y lighttpd && yum clean all -y
 
 # TODO (optional): Copy the builder files into /opt/app-root
 COPY ./etc /opt/app-root/etc
